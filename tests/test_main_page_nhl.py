@@ -36,7 +36,7 @@ def test_btn_header_page(web_browser):
         with allure.step('Тест проверки орфографии'):
             check.equal(elements.get_text(), elements_text)
 
-        with allure.step('Тест проверки правильного адреса'):
+        with allure.step('Тест проверки правильного адреса URL'):
             check.equal(elements.get_attribute('href'), elements_url)
 
         # with allure.step('Тест проверки правильного адреса при переходе'):
