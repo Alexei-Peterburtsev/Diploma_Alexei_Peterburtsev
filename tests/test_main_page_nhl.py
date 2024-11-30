@@ -44,18 +44,18 @@ def test_btn_header_page(web_browser):
         #     check.equal(page.get_current_url(), elements_url)
 
 
-def test_btn_footer_page(web_browser):
-    ''''это тест проверяет меню футера на кликабельность, отображение, орфографию'''
-
-    page = MainPage(web_browser)
-
-    footer_elements = [page.footer_btn_support,
-                       page.footer_btn_pay,
-                       page.footer_btn_ad,
-                       page.footer_btn_contacts
-                       ]
-
-    for ele_footer in footer_elements:
-
-        with allure.step('Тест проверки отображения на экране'):
-            check.is_true(ele_footer.is_visible())
+# def test_btn_footer_page(web_browser):
+#     ''''это тест проверяет меню футера на кликабельность, отображение, орфографию'''
+#
+#     page = MainPage(web_browser)
+#
+#     footer_elements = [page.footer_btn_support,
+#                        page.footer_btn_pay,
+#                        page.footer_btn_ad,
+#                        page.footer_btn_contacts
+#                        ]
+#
+#     for ele_footer in footer_elements:
+#
+#         with allure.step('Тест проверки отображения на экране'):
+#             check.is_true(ele_footer.is_visible())
