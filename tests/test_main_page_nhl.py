@@ -9,7 +9,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 @allure.story('Тест для проверки главной страницы')
-@allure.feature('Проверки кнопок хедара')
+@allure.feature('Проверки кнопок хедара и футера')
 
 def test_btn_header_page(web_browser):
     ''''это тест проверяет меню хедера на кликабельность, отображение, орфографию'''
