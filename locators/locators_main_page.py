@@ -20,3 +20,7 @@ class MainPage(WebPage):
     header_btn_tenant = WebElement(xpath="//li[@class='with-submenu']//a[contains(text(),'Арендатору')]")
     header_btn_services = WebElement(xpath="//li[@class='with-submenu']//a[contains(text(),'Услуги')]")
     header_btn_appeals = WebElement(xpath="//li[@class='with-submenu']//a[contains(text(),'Обращения')]")
+    header_btn_ru = WebElement(xpath="//a[@class='active']")
+    header_btn_by = WebElement(xpath="//a[normalize-space()='BY']")
+
+    # header_btn_special_ver = WebElement(xpath='//a[@class="special-version hidden-mobile"]')
