@@ -25,15 +25,32 @@ def test_header_btn(web_browser):
                             (page.header_btn_appeals, "Обращения", "https://komarovka.by/elektronnye-obrashcheniya/"),
                             (page.header_btn_ru, "RU", "https://komarovka.by/"),
                             (page.header_btn_by, "BY", "https://komarovka.by/by/"),
-                            # (page.header_btn_facebook, "", "https://www.facebook.com/komarovka.by/"),
-                            # (page.header_btn_instagram, "", "https://www.instagram.com/komarovka.by/"),
-                            # (page.header_btn_tiktok, "", "https://www.tiktok.com/@komarovka.by")
                             ]
 
     header_special_elements = [(page.header_btn_special_ver, "Версия для слабовидящих"),
                               (page.header_img, "Логотип"),
                               (page.header_input_find, "Поиск по сайту")
                               ]
+
+    header_btn_elements = [(page.header_btn_facebook, "facebook", "https://www.facebook.com/komarovka.by/"),
+                          (page.header_btn_instagram, "instagram", "https://www.instagram.com/komarovka.by/"),
+                          (page.header_btn_tiktok, "tiktok", "https://www.tiktok.com/@komarovka.by")
+                          ]
+
+    switch_window = 1
+    for btn_elements, text_btn_elements, url_btn_elements in header_btn_elements:
+        with allure.step("Тест проверки отображения на экране"):
+            check.is_true(btn_elements.is_visible(), f"Элемент '{text_btn_elements}' отсутствует на экране")
+        with allure.step("Тест проверки кликабельности"):
+            check.is_true(btn_elements.is_clickable(), f"Элемент '{text_btn_elements}' не кликабелен")
+            with allure.step("Тест проверки правильного адреса URL"):
+                check.equal(btn_elements.get_attribute("href"), url_btn_elements, f"Элемент '{text_btn_elements}' содержит неправильную ссылку url")
+        with allure.step("Тест проверки правильного адреса при переходе"):
+            btn_elements.click()
+            page.switch_to_window(switch_window)
+            check.equal(page.get_current_url(), url_btn_elements, f"Элемент '{text_btn_elements}' переходит на неправильную ссылку url")
+            page.switch_to_window(0)
+        switch_window += 1
 
     for special_elements, text_special_elements in header_special_elements:
         with allure.step("Тест проверки отображения на экране"):
