@@ -18,6 +18,8 @@ def test_header_btn(web_browser):
 
     page = MainPage(web_browser)
 
+    # Элементы хедера с текстом:
+
     header_elements_menu = [(page.header_btn_about, "О нас", "https://komarovka.by/about/"),
                             (page.header_btn_buyer, "Покупателю", "https://komarovka.by/pokupatelyu/"),
                             (page.header_btn_tenant, "Арендатору", "https://komarovka.by/arendatoru/"),
@@ -27,21 +29,22 @@ def test_header_btn(web_browser):
                             (page.header_btn_by, "BY", "https://komarovka.by/by/"),
                             ]
 
+    # Элементы хедера без текста:
+
     header_special_elements = [(page.header_btn_special_ver, "Версия для слабовидящих"),
                                (page.header_img, "Логотип"),
                                (page.header_input_find_first, "Поиск по сайту первое поле ввода"),
                                (page.header_btn_search_first, "Поиск по сайту первая кнопка")
                                ]
 
+    # Элементы хедера с переходом на другой сайт:
+
     header_btn_elements = [(page.header_btn_facebook, "facebook", "https://www.facebook.com/komarovka.by/"),
                            (page.header_btn_instagram, "instagram", "https://www.instagram.com/komarovka.by/"),
                            (page.header_btn_tiktok, "tiktok", "https://www.tiktok.com/@komarovka.by")
                            ]
 
-    with allure.step("Проверка на ввод текста в первую строку поиска"):
-        test_text_search = "директор"
-        page.header_input_find_first.send_keys(test_text_search)
-        page.header_btn_search_first.click(1)
+    # Проверка элементов хедера с переходом на другой сайт:
 
     switch_window = 1
     for btn_elements, text_btn_elements, url_btn_elements in header_btn_elements:
@@ -58,11 +61,15 @@ def test_header_btn(web_browser):
             page.switch_to_window(0)
         switch_window += 1
 
+    # Проверка элементов хедера без текста:
+
     for special_elements, text_special_elements in header_special_elements:
         with allure.step("Тест проверки отображения на экране"):
             check.is_true(special_elements.is_visible(), f"Элемент '{text_special_elements}' отсутствует на экране")
         with allure.step("Тест проверки кликабельности"):
             check.is_true(special_elements.is_clickable(), f"Элемент '{text_special_elements}' не кликабелен")
+
+    # Проверка элементов хедера с текстом:
 
     for elements, elements_text, elements_url in header_elements_menu:
         with allure.step("Тест проверки отображения на экране"):
@@ -82,6 +89,8 @@ def test_futer_btn(web_browser):
 
     page = MainPage(web_browser)
 
+    # Элементы футера с текстом:
+
     futer_btn_elements = [(page.futer_btn_about, "О нас", "https://komarovka.by/about/"),
                           (page.futer_btn_buyer, "Покупателю", "https://komarovka.by/pokupatelyu/"),
                           (page.futer_btn_tenant, "Арендатору", "https://komarovka.by/arendatoru/"),
@@ -96,14 +105,20 @@ def test_futer_btn(web_browser):
                           (page.futer_btn_vacancies, "Вакансии", "https://komarovka.by/about/vacancii/")
                           ]
 
+    # Элементы футера без текста:
+
     futer_special_elements = [(page.futer_img, "Логотип"),
                               (page.futer_telefon, "Номер телефона"),
                               (page.futer_email, "Электронная почта")
                               ]
 
+    # Проверка элементов футера без текста:
+
     for special_elements, text_special_elements in futer_special_elements:
         with allure.step("Тест проверки отображения на экране"):
             check.is_true(special_elements.is_visible(), f"Элемент '{text_special_elements}' отсутствует на экране")
+
+    # Проверка элементов футера с текстом:
 
     for elements, elements_text, elements_url in futer_btn_elements:
         with allure.step("Тест проверки отображения на экране"):
@@ -117,3 +132,24 @@ def test_futer_btn(web_browser):
         with allure.step("Тест проверки правильного адреса при переходе"):
             elements.click()
             check.equal(page.get_current_url(), elements_url, f"Элемент '{elements_text}' переходит на неправильную ссылку url")
+
+
+def test_first_search_input(web_browser):
+    '''Этот тест проверяет первую строку поиска'''
+
+    page = MainPage(web_browser)
+
+    with allure.step("Проверка на ввод текста в первую строку поиска"):
+        test_text_search_one = "директор"
+        page.header_input_find_first.send_keys(test_text_search_one)
+        page.header_btn_search_first.click(1)
+
+def test_second_search_input(web_browser):
+    '''Этот тест проверяет вторую строку поиска'''
+
+    page = MainPage(web_browser)
+
+    with allure.step("Проверка на ввод текста во вторую строку поиска"):
+        test_text_search_two = "главный инженер"
+        page.header_input_find_second.send_keys(test_text_search_two)
+        page.header_btn_search_second.click(1)

@@ -26,6 +26,8 @@ class MainPage(WebPage):
     header_btn_special_ver = WebElement(xpath="//a[@class='special-version hidden-mobile']")
     header_input_find_first = WebElement(xpath="(//input[@id='title-search-input'])[1]")
     header_btn_search_first = WebElement(xpath="(//button[@class='btn'])[1]")
+    header_input_find_second = WebElement(xpath="(//input[@id='title-search-input'])[2]")
+    header_btn_search_second = WebElement(xpath="(//button[@class='btn'])[2]")
     header_img = WebElement(xpath="//img[@class='img-responsive logo']")
 
     futer_img = WebElement(xpath="//img[@src='/include/logo_footer.svg']")
