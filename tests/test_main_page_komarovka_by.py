@@ -107,9 +107,10 @@ def test_futer_btn(web_browser):
 
     # Элементы футера с переходом на другой сайт:
 
-    futer_btn_elements_new_site = [(page.futer_btn_facebook, "facebook", "https://www.facebook.com/komarovka.by/"),
+    futer_btn_elements_new_site = [(page.futer_btn_artis, "ArtisMedia", "http://www.artismedia.by/"),                   # в дереве http без 's'
+                                   (page.futer_btn_facebook, "facebook", "https://www.facebook.com/komarovka.by/"),
                                    (page.futer_btn_instagram, "instagram", "https://www.instagram.com/komarovka.by/"),
-                                   (page.futer_btn_tiktok, "tiktok", "https://www.tiktok.com/@komarovka.by")
+                                   (page.futer_btn_tiktok, "tiktok", "https://www.tiktok.com/@komarovka.by")            # в дереве href без ссылки
                                    ]
 
     # Элементы футера без текста:

@@ -48,3 +48,4 @@ class MainPage(WebPage):
     futer_btn_facebook = WebElement(xpath="//div[@class='footer-social']//a[1]")
     futer_btn_instagram = WebElement(xpath="//div[@class='footer-social']//a[2]")
     futer_btn_tiktok = WebElement(xpath="//div[@class='footer-social']//a[3]")
+    futer_btn_artis = WebElement(xpath="//a[normalize-space()='ArtisMedia']")
