@@ -24,7 +24,8 @@ class MainPage(WebPage):
     header_btn_instagram = WebElement(xpath="//div[@class='header-social hidden-mobile hidden-tablet']//a[2]")
     header_btn_tiktok = WebElement(xpath="//div[@class='header-social hidden-mobile hidden-tablet']//a[3]")
     header_btn_special_ver = WebElement(xpath="//a[@class='special-version hidden-mobile']")
-    header_input_find = WebElement(xpath="//div[@class='header-others']//form")
+    header_input_find_first = WebElement(xpath="(//input[@id='title-search-input'])[1]")
+    header_btn_search_first = WebElement(xpath="(//button[@class='btn'])[1]")
     header_img = WebElement(xpath="//img[@class='img-responsive logo']")
 
     futer_img = WebElement(xpath="//img[@src='/include/logo_footer.svg']")
