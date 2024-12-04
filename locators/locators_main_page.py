@@ -45,3 +45,6 @@ class MainPage(WebPage):
     futer_btn_dining = WebElement(xpath="//ul[@class='bottom_main_menu']//a[contains(text(),'Столовая')]")
     futer_btn_travel = WebElement(xpath="//ul[@class='bottom_main_menu']//a[contains(text(),'Схема проезда')]")
     futer_btn_vacancies = WebElement(xpath="//ul[@class='bottom_main_menu']//a[contains(text(),'Вакансии')]")
+    futer_btn_facebook = WebElement(xpath="//div[@class='footer-social']//a[1]")
+    futer_btn_instagram = WebElement(xpath="//div[@class='footer-social']//a[2]")
+    futer_btn_tiktok = WebElement(xpath="//div[@class='footer-social']//a[3]")

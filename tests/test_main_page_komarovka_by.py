@@ -46,7 +46,7 @@ def test_header_btn(web_browser):
 
     # Проверка элементов хедера с переходом на другой сайт:
 
-    switch_window = 1
+    switch_window_header = 1
     for btn_elements, text_btn_elements, url_btn_elements in header_btn_elements:
         with allure.step("Тест проверки отображения на экране"):
             check.is_true(btn_elements.is_visible(), f"Элемент '{text_btn_elements}' отсутствует на экране")
@@ -56,10 +56,10 @@ def test_header_btn(web_browser):
                 check.equal(btn_elements.get_attribute("href"), url_btn_elements, f"Элемент '{text_btn_elements}' содержит неправильную ссылку url")
         with allure.step("Тест проверки правильного адреса при переходе"):
             btn_elements.click()
-            page.switch_to_window(switch_window)
+            page.switch_to_window(switch_window_header)
             check.equal(page.get_current_url(), url_btn_elements, f"Элемент '{text_btn_elements}' переходит на неправильную ссылку url")
             page.switch_to_window(0)
-        switch_window += 1
+        switch_window_header += 1
 
     # Проверка элементов хедера без текста:
 
@@ -105,6 +105,13 @@ def test_futer_btn(web_browser):
                           (page.futer_btn_vacancies, "Вакансии", "https://komarovka.by/about/vacancii/")
                           ]
 
+    # Элементы футера с переходом на другой сайт:
+
+    futer_btn_elements_new_site = [(page.futer_btn_facebook, "facebook", "https://www.facebook.com/komarovka.by/"),
+                                   (page.futer_btn_instagram, "instagram", "https://www.instagram.com/komarovka.by/"),
+                                   (page.futer_btn_tiktok, "tiktok", "https://www.tiktok.com/@komarovka.by")
+                                   ]
+
     # Элементы футера без текста:
 
     futer_special_elements = [(page.futer_img, "Логотип"),
@@ -133,6 +140,22 @@ def test_futer_btn(web_browser):
             elements.click()
             check.equal(page.get_current_url(), elements_url, f"Элемент '{elements_text}' переходит на неправильную ссылку url")
 
+    # Проверка элементов футера с переходом на другой сайт:
+
+    switch_window_futer = 1
+    for btn_elements, text_btn_elements, url_btn_elements in futer_btn_elements_new_site:
+        with allure.step("Тест проверки отображения на экране"):
+            check.is_true(btn_elements.is_visible(), f"Элемент '{text_btn_elements}' отсутствует на экране")
+        with allure.step("Тест проверки кликабельности"):
+            check.is_true(btn_elements.is_clickable(), f"Элемент '{text_btn_elements}' не кликабелен")
+            with allure.step("Тест проверки правильного адреса URL"):
+                check.equal(btn_elements.get_attribute("href"), url_btn_elements, f"Элемент '{text_btn_elements}' содержит неправильную ссылку url")
+        with allure.step("Тест проверки правильного адреса при переходе"):
+            btn_elements.click()
+            page.switch_to_window(switch_window_futer)
+            check.equal(page.get_current_url(), url_btn_elements, f"Элемент '{text_btn_elements}' переходит на неправильную ссылку url")
+            page.switch_to_window(0)
+        switch_window_futer += 1
 
 def test_first_search_input(web_browser):
     '''Этот тест проверяет первую строку поиска'''
