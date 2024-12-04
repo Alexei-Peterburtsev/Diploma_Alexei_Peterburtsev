@@ -28,14 +28,20 @@ def test_header_btn(web_browser):
                             ]
 
     header_special_elements = [(page.header_btn_special_ver, "Версия для слабовидящих"),
-                              (page.header_img, "Логотип"),
-                              (page.header_input_find, "Поиск по сайту")
-                              ]
+                               (page.header_img, "Логотип"),
+                               (page.header_input_find_first, "Поиск по сайту первое поле ввода"),
+                               (page.header_btn_search_first, "Поиск по сайту первая кнопка")
+                               ]
 
     header_btn_elements = [(page.header_btn_facebook, "facebook", "https://www.facebook.com/komarovka.by/"),
-                          (page.header_btn_instagram, "instagram", "https://www.instagram.com/komarovka.by/"),
-                          (page.header_btn_tiktok, "tiktok", "https://www.tiktok.com/@komarovka.by")
-                          ]
+                           (page.header_btn_instagram, "instagram", "https://www.instagram.com/komarovka.by/"),
+                           (page.header_btn_tiktok, "tiktok", "https://www.tiktok.com/@komarovka.by")
+                           ]
+
+    with allure.step("Проверка на ввод текста в первую строку поиска"):
+        test_text_search = "директор"
+        page.header_input_find_first.send_keys(test_text_search)
+        page.header_btn_search_first.click(1)
 
     switch_window = 1
     for btn_elements, text_btn_elements, url_btn_elements in header_btn_elements:
