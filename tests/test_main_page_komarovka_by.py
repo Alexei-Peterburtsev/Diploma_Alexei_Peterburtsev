@@ -153,3 +153,4 @@ def test_second_search_input(web_browser):
         test_text_search_two = "главный инженер"
         page.header_input_find_second.send_keys(test_text_search_two)
         page.header_btn_search_second.click(1)
+        
