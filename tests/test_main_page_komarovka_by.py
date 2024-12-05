@@ -149,7 +149,7 @@ def test_futer_btn(web_browser):
             check.is_true(btn_elements.is_visible(), f"Элемент '{text_btn_elements}' отсутствует на экране")
         with allure.step("Тест проверки кликабельности"):
             check.is_true(btn_elements.is_clickable(), f"Элемент '{text_btn_elements}' не кликабелен")
-            with allure.step("Тест проверки правильного адреса URL"):
+        with allure.step("Тест проверки правильного адреса URL"):
                 check.equal(btn_elements.get_attribute("href"), url_btn_elements, f"Элемент '{text_btn_elements}' содержит неправильную ссылку url")
         with allure.step("Тест проверки правильного адреса при переходе"):
             btn_elements.click()
@@ -177,4 +177,36 @@ def test_second_search_input(web_browser):
         test_text_search_two = "главный инженер"
         page.header_input_find_second.send_keys(test_text_search_two)
         page.header_btn_search_second.click(1)
-        
+
+def test_header_menu(web_browser):
+    '''Этот тест проверят меню хедера на открытие пунктов меню, их наличие, кликабельность, орфографию, ссылки, переходы по ссылкам'''
+
+    page = MainPage(web_browser)
+
+    # Элементы 1-го пункта главного меню:
+
+    main_menu1_elements= [(page.main_menu1_btn_today, "Рынок сегодня",""),
+                          (page.main_menu1_btn_story, "История", ""),
+                          (page.main_menu1_btn_management, "Руководство", ""),
+                          (page.main_menu1_btn_structure, "Структура предприятия", ""),
+                          (page.main_menu1_btn_public, "Общественные объединения", ""),
+                          (page.main_menu1_btn_news, "Новости", ""),
+                          (page.main_menu1_btn_vacancies, "Вакансии", ""),
+                          (page.main_menu1_btn_gallery, "Фотогалерея", ""),
+                          (page.main_menu1_btn_directions, "Схема проезда", ""),
+                          (page.main_menu1_btn_smi, "СМИ о нас", ""),
+                          (page.main_menu1_btn_contacts, "Контакты", ""),
+                          (page.main_menu1_btn_corruption, "Противодействие коррупции", "")
+                          ]
+
+    # Проверка элементов 1-го пункта меню:
+
+    page.header_btn_about.right_mouse_click()
+
+    for menu1_elements, menu1_elements_text, menu1_elements_url in main_menu1_elements:
+        with allure.step("Тест проверки отображения на экране"):
+            check.is_true(menu1_elements.is_visible(), f"Элемент '{menu1_elements_text}' отсутствует на экране")
+        with allure.step("Тест проверки орфографии"):
+            check.equal(menu1_elements.get_text(), menu1_elements_text, f"Текст элемента '{menu1_elements_text}' содержит ошибку")
+        with allure.step("Тест проверки кликабельности"):
+            check.is_true(menu1_elements.is_clickable(), f"Элемент '{menu1_elements_text}' не кликабелен")
