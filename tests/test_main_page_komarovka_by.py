@@ -178,35 +178,80 @@ def test_second_search_input(web_browser):
         page.header_input_find_second.send_keys(test_text_search_two)
         page.header_btn_search_second.click(1)
 
-def test_header_menu(web_browser):
+def test_header_menu1(web_browser):
     '''Этот тест проверят меню хедера на открытие пунктов меню, их наличие, кликабельность, орфографию, ссылки, переходы по ссылкам'''
 
     page = MainPage(web_browser)
 
     # Элементы 1-го пункта главного меню:
 
-    main_menu1_elements= [(page.main_menu1_btn_today, "Рынок сегодня",""),
-                          (page.main_menu1_btn_story, "История", ""),
-                          (page.main_menu1_btn_management, "Руководство", ""),
-                          (page.main_menu1_btn_structure, "Структура предприятия", ""),
-                          (page.main_menu1_btn_public, "Общественные объединения", ""),
-                          (page.main_menu1_btn_news, "Новости", ""),
-                          (page.main_menu1_btn_vacancies, "Вакансии", ""),
-                          (page.main_menu1_btn_gallery, "Фотогалерея", ""),
-                          (page.main_menu1_btn_directions, "Схема проезда", ""),
-                          (page.main_menu1_btn_smi, "СМИ о нас", ""),
-                          (page.main_menu1_btn_contacts, "Контакты", ""),
-                          (page.main_menu1_btn_corruption, "Противодействие коррупции", "")
-                          ]
+    main_menu1_elements = [(page.main_menu1_btn_today, "Рынок сегодня", "https://komarovka.by/about/rynok-segodnya/"),
+                           (page.main_menu1_btn_story, "История", "https://komarovka.by/about/istoriya/"),
+                           (page.main_menu1_btn_management, "Руководство", "https://komarovka.by/about/rukovodstvo/"),
+                           (page.main_menu1_btn_structure, "Структура предприятия", "https://komarovka.by/about/struktura-predpriyatiya/"),
+                           (page.main_menu1_btn_public, "Общественные объединения", "https://komarovka.by/about/obshchestvennye-obedineniya/"),
+                           (page.main_menu1_btn_news, "Новости", "https://komarovka.by/about/news/"),
+                           (page.main_menu1_btn_vacancies, "Вакансии", "https://komarovka.by/about/vacancii/"),
+                           (page.main_menu1_btn_gallery, "Фотогалерея", "https://komarovka.by/about/fotogalereya/"),
+                           (page.main_menu1_btn_directions, "Схема проезда", "https://komarovka.by/about/skhema-proezda/"),
+                           (page.main_menu1_btn_smi, "СМИ о нас", "https://komarovka.by/about/smi-o-nas/"),
+                           (page.main_menu1_btn_contacts, "Контакты", "https://komarovka.by/about/contacts/"),
+                           (page.main_menu1_btn_corruption, "Противодействие коррупции", "https://komarovka.by/about/protivodeystvie-korruptsii/")
+                           ]
+
+    main_menu2_elements = [(page.main_menu2_btn_info, "Полезная информация", "https://komarovka.by/pokupatelyu/poleznaya-informatsiya/"),
+                           (page.main_menu2_btn_market, "Схема рынка", "https://komarovka.by/pokupatelyu/skhema-rynka/"),
+                           (page.main_menu2_btn_own_production, "Собственное производство", "https://komarovka.by/pokupatelyu/sobstvennoe-proizvodstvo/")
+                           ]
+
+    main_menu3_elements = [(page.main_menu3_btn_order, "Порядок предоставления торговых объектов (мест)", "https://komarovka.by/arendatoru/torgovye-mesta/"),
+                           (page.main_menu3_btn_rent, "Предлагаем в аренду", "https://komarovka.by/arendatoru/predlagaem-v-arendu/")
+                           ]
 
     # Проверка элементов 1-го пункта меню:
 
-    page.header_btn_about.right_mouse_click()
-
     for menu1_elements, menu1_elements_text, menu1_elements_url in main_menu1_elements:
+        page.main_menu1_btn_open.click()
         with allure.step("Тест проверки отображения на экране"):
             check.is_true(menu1_elements.is_visible(), f"Элемент '{menu1_elements_text}' отсутствует на экране")
         with allure.step("Тест проверки орфографии"):
             check.equal(menu1_elements.get_text(), menu1_elements_text, f"Текст элемента '{menu1_elements_text}' содержит ошибку")
         with allure.step("Тест проверки кликабельности"):
             check.is_true(menu1_elements.is_clickable(), f"Элемент '{menu1_elements_text}' не кликабелен")
+        with allure.step("Тест проверки правильного адреса URL"):
+                check.equal(menu1_elements.get_attribute("href"), menu1_elements_url, f"Элемент '{menu1_elements_text}' содержит неправильную ссылку url")
+        with allure.step("Тест проверки правильного адреса при переходе"):
+            menu1_elements.click()
+            check.equal(page.get_current_url(), menu1_elements_url, f"Элемент '{menu1_elements_text}' переходит на неправильную ссылку url")
+
+    # Проверка элементов 2-го пункта меню:
+
+    for menu2_elements, menu2_elements_text, menu2_elements_url in main_menu2_elements:
+        page.main_menu2_btn_open.click()
+        with allure.step("Тест проверки отображения на экране"):
+            check.is_true(menu2_elements.is_visible(), f"Элемент '{menu2_elements_text}' отсутствует на экране")
+        with allure.step("Тест проверки орфографии"):
+            check.equal(menu2_elements.get_text(), menu2_elements_text, f"Текст элемента '{menu2_elements_text}' содержит ошибку")
+        with allure.step("Тест проверки кликабельности"):
+            check.is_true(menu2_elements.is_clickable(), f"Элемент '{menu2_elements_text}' не кликабелен")
+        with allure.step("Тест проверки правильного адреса URL"):
+                check.equal(menu2_elements.get_attribute("href"), menu2_elements_url, f"Элемент '{menu2_elements_text}' содержит неправильную ссылку url")
+        with allure.step("Тест проверки правильного адреса при переходе"):
+            menu2_elements.click()
+            check.equal(page.get_current_url(), menu2_elements_url, f"Элемент '{menu2_elements_text}' переходит на неправильную ссылку url")
+
+    # Проверка элементов 3-го пункта меню:
+
+    for menu3_elements, menu3_elements_text, menu3_elements_url in main_menu3_elements:
+        page.main_menu3_btn_open.click()
+        with allure.step("Тест проверки отображения на экране"):
+            check.is_true(menu3_elements.is_visible(), f"Элемент '{menu3_elements_text}' отсутствует на экране")
+        with allure.step("Тест проверки орфографии"):
+            check.equal(menu3_elements.get_text(), menu3_elements_text, f"Текст элемента '{menu3_elements_text}' содержит ошибку")
+        with allure.step("Тест проверки кликабельности"):
+            check.is_true(menu3_elements.is_clickable(), f"Элемент '{menu3_elements_text}' не кликабелен")
+        with allure.step("Тест проверки правильного адреса URL"):
+                check.equal(menu3_elements.get_attribute("href"), menu3_elements_url, f"Элемент '{menu3_elements_text}' содержит неправильную ссылку url")
+        with allure.step("Тест проверки правильного адреса при переходе"):
+            menu3_elements.click()
+            check.equal(page.get_current_url(), menu3_elements_url, f"Элемент '{menu3_elements_text}' переходит на неправильную ссылку url")

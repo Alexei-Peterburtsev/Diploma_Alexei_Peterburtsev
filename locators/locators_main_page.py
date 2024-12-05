@@ -50,6 +50,7 @@ class MainPage(WebPage):
     futer_btn_tiktok = WebElement(xpath="//div[@class='footer-social']//a[3]")
     futer_btn_artis = WebElement(xpath="//a[normalize-space()='ArtisMedia']")
 
+    main_menu1_btn_open = WebElement(xpath="(//i[@class='fa fa-angle-right'])[1]")
     main_menu1_btn_today = WebElement(xpath="//ul[@class='sub-menu']/li/a[contains(text(),'Рынок сегодня')]")
     main_menu1_btn_story = WebElement(xpath="//ul[@class='sub-menu']/li/a[contains(text(),'История')]")
     main_menu1_btn_management = WebElement(xpath="//ul[@class='sub-menu']/li/a[contains(text(),'Руководство')]")
@@ -62,3 +63,12 @@ class MainPage(WebPage):
     main_menu1_btn_smi = WebElement(xpath="//ul[@class='sub-menu']/li/a[contains(text(),'СМИ о нас')]")
     main_menu1_btn_contacts = WebElement(xpath="//ul[@class='sub-menu']/li/a[contains(text(),'Контакты')]")
     main_menu1_btn_corruption = WebElement(xpath="//ul[@class='sub-menu']/li/a[contains(text(),'Противодействие коррупции')]")
+
+    main_menu2_btn_open = WebElement(xpath="(//i[@class='fa fa-angle-right'])[2]")
+    main_menu2_btn_info = WebElement(xpath="//ul[@class='sub-menu']/li/a[contains(text(),'Полезная информация')]")
+    main_menu2_btn_market = WebElement(xpath="//ul[@class='sub-menu']/li/a[contains(text(),'Схема рынка')]")
+    main_menu2_btn_own_production = WebElement(xpath="//ul[@class='sub-menu']/li/a[contains(text(),'Собственное производство')]")
+
+    main_menu3_btn_open = WebElement(xpath="(//i[@class='fa fa-angle-right'])[3]")
+    main_menu3_btn_order = WebElement(xpath="//ul[@class='sub-menu']/li/a[contains(text(),'Порядок предоставления торговых объектов (мест)')]")
+    main_menu3_btn_rent = WebElement(xpath="//ul[@class='sub-menu']/li/a[contains(text(),'Предлагаем в аренду')]")
