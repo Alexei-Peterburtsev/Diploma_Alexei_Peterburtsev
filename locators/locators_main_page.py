@@ -72,3 +72,14 @@ class MainPage(WebPage):
     main_menu3_btn_open = WebElement(xpath="(//i[@class='fa fa-angle-right'])[3]")
     main_menu3_btn_order = WebElement(xpath="//ul[@class='sub-menu']/li/a[contains(text(),'Порядок предоставления торговых объектов (мест)')]")
     main_menu3_btn_rent = WebElement(xpath="//ul[@class='sub-menu']/li/a[contains(text(),'Предлагаем в аренду')]")
+
+    main_menu4_btn_open = WebElement(xpath="(//i[@class='fa fa-angle-right'])[4]")
+    main_menu4_btn_radio_center = WebElement(xpath="//ul[@class='sub-menu']/li/a[contains(text(),'Радиоузел')]")
+    main_menu4_btn_laboratory = WebElement(xpath="//ul[@class='sub-menu']/li/a[contains(text(),'Лаборатория')]")
+    main_menu4_btn_health_center = WebElement(xpath="//ul[@class='sub-menu']/li/a[contains(text(),'Здравпункт')]")
+
+    main_menu5_btn_open = WebElement(xpath="(//i[@class='fa fa-angle-right'])[5]")
+    main_menu5_btn_appeals = WebElement(xpath="//ul[@class='sub-menu']/li/a[contains(text(),'Электронные обращения')]")
+    main_menu5_btn_reception = WebElement(xpath="//ul[@class='sub-menu']/li/a[contains(text(),'Личный прием граждан и юридических лиц')]")
+    main_menu5_btn_book = WebElement(xpath="//ul[@class='sub-menu']/li/a[contains(text(),'Книга замечаний и предложений')]")
+    main_menu5_btn_list = WebElement(xpath="//ul[@class='sub-menu']/li/a[contains(text(),'Перечень административных процедур')]")

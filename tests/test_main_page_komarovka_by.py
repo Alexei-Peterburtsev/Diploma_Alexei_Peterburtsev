@@ -208,6 +208,17 @@ def test_header_menu1(web_browser):
                            (page.main_menu3_btn_rent, "Предлагаем в аренду", "https://komarovka.by/arendatoru/predlagaem-v-arendu/")
                            ]
 
+    main_menu4_elements = [(page.main_menu4_btn_radio_center, "Радиоузел", "https://komarovka.by/uslugi/radiouzel/"),
+                           (page.main_menu4_btn_laboratory, "Лаборатория", "https://komarovka.by/uslugi/laboratoriya/"),
+                           (page.main_menu4_btn_health_center, "Здравпункт", "https://komarovka.by/uslugi/zdravpunkt/")
+                           ]
+
+    main_menu5_elements = [(page.main_menu5_btn_appeals, "Электронные обращения", "https://komarovka.by/elektronnye-obrashcheniya/elektronnye-obrashcheniya/"),
+                           (page.main_menu5_btn_reception, "Личный прием граждан и юридических лиц", "https://komarovka.by/elektronnye-obrashcheniya/lichnyy-priem/"),
+                           (page.main_menu5_btn_book, "Книга замечаний и предложений", "https://komarovka.by/elektronnye-obrashcheniya/kniga-zamechaniy-i-predlozheniy/"),
+                           (page.main_menu5_btn_list, "Перечень административных процедур", "https://komarovka.by/elektronnye-obrashcheniya/perechen-administrativnykh-protsedur/")
+                           ]
+
     # Проверка элементов 1-го пункта меню:
 
     for menu1_elements, menu1_elements_text, menu1_elements_url in main_menu1_elements:
@@ -255,3 +266,35 @@ def test_header_menu1(web_browser):
         with allure.step("Тест проверки правильного адреса при переходе"):
             menu3_elements.click()
             check.equal(page.get_current_url(), menu3_elements_url, f"Элемент '{menu3_elements_text}' переходит на неправильную ссылку url")
+
+    # Проверка элементов 4-го пункта меню:
+
+    for menu4_elements, menu4_elements_text, menu4_elements_url in main_menu4_elements:
+        page.main_menu4_btn_open.click()
+        with allure.step("Тест проверки отображения на экране"):
+            check.is_true(menu4_elements.is_visible(), f"Элемент '{menu4_elements_text}' отсутствует на экране")
+        with allure.step("Тест проверки орфографии"):
+            check.equal(menu4_elements.get_text(), menu4_elements_text, f"Текст элемента '{menu4_elements_text}' содержит ошибку")
+        with allure.step("Тест проверки кликабельности"):
+            check.is_true(menu4_elements.is_clickable(), f"Элемент '{menu4_elements_text}' не кликабелен")
+        with allure.step("Тест проверки правильного адреса URL"):
+                check.equal(menu4_elements.get_attribute("href"), menu4_elements_url, f"Элемент '{menu4_elements_text}' содержит неправильную ссылку url")
+        with allure.step("Тест проверки правильного адреса при переходе"):
+            menu4_elements.click()
+            check.equal(page.get_current_url(), menu4_elements_url, f"Элемент '{menu4_elements_text}' переходит на неправильную ссылку url")
+
+    # Проверка элементов 5-го пункта меню:
+
+    for menu5_elements, menu5_elements_text, menu5_elements_url in main_menu5_elements:
+        page.main_menu5_btn_open.click()
+        with allure.step("Тест проверки отображения на экране"):
+            check.is_true(menu5_elements.is_visible(), f"Элемент '{menu5_elements_text}' отсутствует на экране")
+        with allure.step("Тест проверки орфографии"):
+            check.equal(menu5_elements.get_text(), menu5_elements_text, f"Текст элемента '{menu5_elements_text}' содержит ошибку")
+        with allure.step("Тест проверки кликабельности"):
+            check.is_true(menu5_elements.is_clickable(), f"Элемент '{menu5_elements_text}' не кликабелен")
+        with allure.step("Тест проверки правильного адреса URL"):
+                check.equal(menu5_elements.get_attribute("href"), menu5_elements_url, f"Элемент '{menu5_elements_text}' содержит неправильную ссылку url")
+        with allure.step("Тест проверки правильного адреса при переходе"):
+            menu5_elements.click()
+            check.equal(page.get_current_url(), menu5_elements_url, f"Элемент '{menu5_elements_text}' переходит на неправильную ссылку url")
