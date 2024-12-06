@@ -14,7 +14,7 @@ from selenium.webdriver.common.by import By
 @allure.feature("Проверка кнопок хедера и футера")
 
 def test_header_btn(web_browser):
-    '''Этот тест проверяет кнопки меню хедера на наличие логотипа, кнопки на кликабельность, отображение, орфографию, ссылку url, переход по url'''
+    '''Этот тест проверяет хедер на наличие логотипа, кнопки на кликабельность, отображение, орфографию, ссылку url, переход по url'''
 
     page = MainPage(web_browser)
 
@@ -85,7 +85,7 @@ def test_header_btn(web_browser):
             check.equal(page.get_current_url(), elements_url, f"Элемент '{elements_text}' переходит на неправильную ссылку url")
 
 def test_futer_btn(web_browser):
-    '''Этот тест проверяет кнопки меню футера на наличие логотипа, кнопки на кликабельность, отображение, орфографию, ссылку url, переход по url'''
+    '''Этот тест проверяет футер на наличие логотипа, кнопки на кликабельность, отображение, орфографию, ссылку url, переход по url'''
 
     page = MainPage(web_browser)
 
@@ -178,8 +178,8 @@ def test_second_search_input(web_browser):
         page.header_input_find_second.send_keys(test_text_search_two)
         page.header_btn_search_second.click(1)
 
-def test_header_menu1(web_browser):
-    '''Этот тест проверят меню хедера на открытие пунктов меню, их наличие, кликабельность, орфографию, ссылки, переходы по ссылкам'''
+def test_main_menu(web_browser):
+    '''Этот тест проверят главное меню на открытие пунктов, их наличие, кликабельность, орфографию, ссылки, переходы по ссылкам'''
 
     page = MainPage(web_browser)
 
@@ -199,19 +199,27 @@ def test_header_menu1(web_browser):
                            (page.main_menu1_btn_corruption, "Противодействие коррупции", "https://komarovka.by/about/protivodeystvie-korruptsii/")
                            ]
 
+    # Элементы 2-го пункта главного меню:
+
     main_menu2_elements = [(page.main_menu2_btn_info, "Полезная информация", "https://komarovka.by/pokupatelyu/poleznaya-informatsiya/"),
                            (page.main_menu2_btn_market, "Схема рынка", "https://komarovka.by/pokupatelyu/skhema-rynka/"),
                            (page.main_menu2_btn_own_production, "Собственное производство", "https://komarovka.by/pokupatelyu/sobstvennoe-proizvodstvo/")
                            ]
 
+    # Элементы 3-го пункта главного меню:
+
     main_menu3_elements = [(page.main_menu3_btn_order, "Порядок предоставления торговых объектов (мест)", "https://komarovka.by/arendatoru/torgovye-mesta/"),
                            (page.main_menu3_btn_rent, "Предлагаем в аренду", "https://komarovka.by/arendatoru/predlagaem-v-arendu/")
                            ]
+
+    # Элементы 4-го пункта главного меню:
 
     main_menu4_elements = [(page.main_menu4_btn_radio_center, "Радиоузел", "https://komarovka.by/uslugi/radiouzel/"),
                            (page.main_menu4_btn_laboratory, "Лаборатория", "https://komarovka.by/uslugi/laboratoriya/"),
                            (page.main_menu4_btn_health_center, "Здравпункт", "https://komarovka.by/uslugi/zdravpunkt/")
                            ]
+
+    # Элементы 5-го пункта главного меню:
 
     main_menu5_elements = [(page.main_menu5_btn_appeals, "Электронные обращения", "https://komarovka.by/elektronnye-obrashcheniya/elektronnye-obrashcheniya/"),
                            (page.main_menu5_btn_reception, "Личный прием граждан и юридических лиц", "https://komarovka.by/elektronnye-obrashcheniya/lichnyy-priem/"),
