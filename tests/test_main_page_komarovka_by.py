@@ -178,7 +178,7 @@ def test_second_search_input(web_browser):
         page.header_input_find_second.send_keys(test_text_search_two)
         page.header_btn_search_second.click(1)
 
-def test_main_menu(web_browser):
+def test_all_main_menu(web_browser):
     '''Этот тест проверят главное меню на открытие пунктов, их наличие, кликабельность, орфографию, ссылки, переходы по ссылкам'''
 
     page = MainPage(web_browser)
@@ -226,83 +226,25 @@ def test_main_menu(web_browser):
                            (page.main_menu5_btn_book, "Книга замечаний и предложений", "https://komarovka.by/elektronnye-obrashcheniya/kniga-zamechaniy-i-predlozheniy/"),
                            (page.main_menu5_btn_list, "Перечень административных процедур", "https://komarovka.by/elektronnye-obrashcheniya/perechen-administrativnykh-protsedur/")
                            ]
+    # Все элементы главного меню:
 
-    # Проверка элементов 1-го пункта меню:
+    main_menu_all_elements = [main_menu1_elements, main_menu2_elements, main_menu3_elements, main_menu4_elements, main_menu5_elements]
 
-    for menu1_elements, menu1_elements_text, menu1_elements_url in main_menu1_elements:
-        page.main_menu1_btn_open.click()
-        with allure.step("Тест проверки отображения на экране"):
-            check.is_true(menu1_elements.is_visible(), f"Элемент '{menu1_elements_text}' отсутствует на экране")
-        with allure.step("Тест проверки орфографии"):
-            check.equal(menu1_elements.get_text(), menu1_elements_text, f"Текст элемента '{menu1_elements_text}' содержит ошибку")
-        with allure.step("Тест проверки кликабельности"):
-            check.is_true(menu1_elements.is_clickable(), f"Элемент '{menu1_elements_text}' не кликабелен")
-        with allure.step("Тест проверки правильного адреса URL"):
-                check.equal(menu1_elements.get_attribute("href"), menu1_elements_url, f"Элемент '{menu1_elements_text}' содержит неправильную ссылку url")
-        with allure.step("Тест проверки правильного адреса при переходе"):
-            menu1_elements.click()
-            check.equal(page.get_current_url(), menu1_elements_url, f"Элемент '{menu1_elements_text}' переходит на неправильную ссылку url")
+    main_menu_click_elements = [page.main_menu1_btn_open, page.main_menu2_btn_open, page.main_menu3_btn_open, page.main_menu4_btn_open, page.main_menu5_btn_open]
 
-    # Проверка элементов 2-го пункта меню:
+    # Проверка всех элементов главного меню:
 
-    for menu2_elements, menu2_elements_text, menu2_elements_url in main_menu2_elements:
-        page.main_menu2_btn_open.click()
-        with allure.step("Тест проверки отображения на экране"):
-            check.is_true(menu2_elements.is_visible(), f"Элемент '{menu2_elements_text}' отсутствует на экране")
-        with allure.step("Тест проверки орфографии"):
-            check.equal(menu2_elements.get_text(), menu2_elements_text, f"Текст элемента '{menu2_elements_text}' содержит ошибку")
-        with allure.step("Тест проверки кликабельности"):
-            check.is_true(menu2_elements.is_clickable(), f"Элемент '{menu2_elements_text}' не кликабелен")
-        with allure.step("Тест проверки правильного адреса URL"):
-                check.equal(menu2_elements.get_attribute("href"), menu2_elements_url, f"Элемент '{menu2_elements_text}' содержит неправильную ссылку url")
-        with allure.step("Тест проверки правильного адреса при переходе"):
-            menu2_elements.click()
-            check.equal(page.get_current_url(), menu2_elements_url, f"Элемент '{menu2_elements_text}' переходит на неправильную ссылку url")
-
-    # Проверка элементов 3-го пункта меню:
-
-    for menu3_elements, menu3_elements_text, menu3_elements_url in main_menu3_elements:
-        page.main_menu3_btn_open.click()
-        with allure.step("Тест проверки отображения на экране"):
-            check.is_true(menu3_elements.is_visible(), f"Элемент '{menu3_elements_text}' отсутствует на экране")
-        with allure.step("Тест проверки орфографии"):
-            check.equal(menu3_elements.get_text(), menu3_elements_text, f"Текст элемента '{menu3_elements_text}' содержит ошибку")
-        with allure.step("Тест проверки кликабельности"):
-            check.is_true(menu3_elements.is_clickable(), f"Элемент '{menu3_elements_text}' не кликабелен")
-        with allure.step("Тест проверки правильного адреса URL"):
-                check.equal(menu3_elements.get_attribute("href"), menu3_elements_url, f"Элемент '{menu3_elements_text}' содержит неправильную ссылку url")
-        with allure.step("Тест проверки правильного адреса при переходе"):
-            menu3_elements.click()
-            check.equal(page.get_current_url(), menu3_elements_url, f"Элемент '{menu3_elements_text}' переходит на неправильную ссылку url")
-
-    # Проверка элементов 4-го пункта меню:
-
-    for menu4_elements, menu4_elements_text, menu4_elements_url in main_menu4_elements:
-        page.main_menu4_btn_open.click()
-        with allure.step("Тест проверки отображения на экране"):
-            check.is_true(menu4_elements.is_visible(), f"Элемент '{menu4_elements_text}' отсутствует на экране")
-        with allure.step("Тест проверки орфографии"):
-            check.equal(menu4_elements.get_text(), menu4_elements_text, f"Текст элемента '{menu4_elements_text}' содержит ошибку")
-        with allure.step("Тест проверки кликабельности"):
-            check.is_true(menu4_elements.is_clickable(), f"Элемент '{menu4_elements_text}' не кликабелен")
-        with allure.step("Тест проверки правильного адреса URL"):
-                check.equal(menu4_elements.get_attribute("href"), menu4_elements_url, f"Элемент '{menu4_elements_text}' содержит неправильную ссылку url")
-        with allure.step("Тест проверки правильного адреса при переходе"):
-            menu4_elements.click()
-            check.equal(page.get_current_url(), menu4_elements_url, f"Элемент '{menu4_elements_text}' переходит на неправильную ссылку url")
-
-    # Проверка элементов 5-го пункта меню:
-
-    for menu5_elements, menu5_elements_text, menu5_elements_url in main_menu5_elements:
-        page.main_menu5_btn_open.click()
-        with allure.step("Тест проверки отображения на экране"):
-            check.is_true(menu5_elements.is_visible(), f"Элемент '{menu5_elements_text}' отсутствует на экране")
-        with allure.step("Тест проверки орфографии"):
-            check.equal(menu5_elements.get_text(), menu5_elements_text, f"Текст элемента '{menu5_elements_text}' содержит ошибку")
-        with allure.step("Тест проверки кликабельности"):
-            check.is_true(menu5_elements.is_clickable(), f"Элемент '{menu5_elements_text}' не кликабелен")
-        with allure.step("Тест проверки правильного адреса URL"):
-                check.equal(menu5_elements.get_attribute("href"), menu5_elements_url, f"Элемент '{menu5_elements_text}' содержит неправильную ссылку url")
-        with allure.step("Тест проверки правильного адреса при переходе"):
-            menu5_elements.click()
-            check.equal(page.get_current_url(), menu5_elements_url, f"Элемент '{menu5_elements_text}' переходит на неправильную ссылку url")
+    for menu_items in range(5):
+        for elements, elements_text, elements_url in main_menu_all_elements[menu_items]:
+            main_menu_click_elements[menu_items].click()
+            with allure.step("Тест проверки отображения на экране"):
+                check.is_true(elements.is_visible(), f"Элемент '{elements_text}' отсутствует на экране")
+            with allure.step("Тест проверки орфографии"):
+                check.equal(elements.get_text(), elements_text, f"Текст элемента '{elements_text}' содержит ошибку")
+            with allure.step("Тест проверки кликабельности"):
+                check.is_true(elements.is_clickable(), f"Элемент '{elements_text}' не кликабелен")
+            with allure.step("Тест проверки правильного адреса URL"):
+                check.equal(elements.get_attribute("href"), elements_url, f"Элемент '{elements_text}' содержит неправильную ссылку url")
+            with allure.step("Тест проверки правильного адреса при переходе"):
+                elements.click()
+                check.equal(page.get_current_url(), elements_url, f"Элемент '{elements_text}' переходит на неправильную ссылку url")
