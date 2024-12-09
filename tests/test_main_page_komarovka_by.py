@@ -270,7 +270,7 @@ def test_menu_greetings(web_browser):
 
     page = MainPage(web_browser)
 
-    main_page_greetings = [(page.main_page_greetings, "Добро пожаловать на главный рынок столицы!")]
+    main_page_greetings = [(page.main_page_greetings, "Добро пожаловать на главный рынок столицы!")] # Заглавные буквы
 
     for elements, elements_text in main_page_greetings:
         with allure.step("Тест проверки отображения на экране"):
