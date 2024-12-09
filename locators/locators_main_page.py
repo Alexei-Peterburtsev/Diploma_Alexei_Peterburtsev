@@ -83,3 +83,9 @@ class MainPage(WebPage):
     main_menu5_btn_reception = WebElement(xpath="//ul[@class='sub-menu']/li/a[contains(text(),'Личный прием граждан и юридических лиц')]")
     main_menu5_btn_book = WebElement(xpath="//ul[@class='sub-menu']/li/a[contains(text(),'Книга замечаний и предложений')]")
     main_menu5_btn_list = WebElement(xpath="//ul[@class='sub-menu']/li/a[contains(text(),'Перечень административных процедур')]")
+
+    main_page_info_item1 = WebElement(xpath="(//div[@class='main-info--item'])[1]")
+    main_page_info_item2 = WebElement(xpath="(//div[@class='main-info--item'])[2]")
+    main_page_info_item3 = WebElement(xpath="(//div[@class='main-info--item'])[3]")
+
+    main_page_greetings = WebElement(xpath="//h5[contains(text(),'Добро пожаловать на главный рынок столицы!')]")
