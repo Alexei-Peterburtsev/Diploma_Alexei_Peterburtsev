@@ -89,3 +89,5 @@ class MainPage(WebPage):
     main_page_info_item3 = WebElement(xpath="(//div[@class='main-info--item'])[3]")
 
     main_page_greetings = WebElement(xpath="//h5[contains(text(),'Добро пожаловать на главный рынок столицы!')]")
+
+    main_search_input_results = WebElement(xpath="//div[@class='search-page']")
