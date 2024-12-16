@@ -20,7 +20,7 @@ def test_first_search_input(web_browser):
     page = MainPage(web_browser)
 
     with allure.step("Проверка на ввод текста в первую строку поиска"):
-        test_text_search_one = "kdlfjhgskfhg"
+        test_text_search_one = "директор"
         page.header_input_find_first.send_keys(test_text_search_one)
         page.header_btn_search_first.click(1)
         time.sleep(2)
