@@ -5,4 +5,4 @@ class User1(HttpUser):
     @task
 
     def MainPage(self):
-        self.client.get("/")
+        self.client.get("/", verify=False)
