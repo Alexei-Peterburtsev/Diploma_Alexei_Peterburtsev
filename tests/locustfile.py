@@ -1,10 +1,27 @@
 from locust import HttpUser, SequentialTaskSet, task, between
 import urllib3
 
-class User1(HttpUser):
-
+class User(HttpUser):
     @task
+    class SequenceOfTasks(SequentialTaskSet):
 
-    def MainPage(self):
         urllib3.disable_warnings()
-        self.client.get("/", verify=False)
+
+        @task
+        def mainPage(self):
+            self.client.get("/", verify=False)
+        @task
+        def aboutPage(self):
+            self.client.get("/about/", verify=False)
+        @task
+        def buyerPage(self):
+            self.client.get("/pokupatelyu/", verify=False)
+        @task
+        def tenantPage(self):
+            self.client.get("/arendatoru/", verify=False)
+        @task
+        def servicesPage(self):
+            self.client.get("/uslugi/", verify=False)
+        @task
+        def appealsPage(self):
+            self.client.get("/elektronnye-obrashcheniya/", verify=False)
