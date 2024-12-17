@@ -15,62 +15,123 @@ def welcome():
 @app.route('/ui_tests')
 def ui_tests():
     """ Эта функция """
-    return render_template('index.html')
+    cmd = ["./scriptsh/ui_tests.sh"]
+    with subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE,
+                          stdin=subprocess.PIPE,
+                          universal_newlines=True) as result:
+        out = result.communicate()
+    return render_template('index.html', text=out, json=out)
 
 @app.route('/ui_test_header_and_footer')
 def ui_test_header_and_footer():
     """ Эта функция """
-    return render_template('index.html')
+    cmd = ["./scriptsh/ui_test_header_and_footer.sh"]
+    with subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE,
+                          stdin=subprocess.PIPE,
+                          universal_newlines=True) as result:
+        out = result.communicate()
+    return render_template('index.html', text=out, json=out)
 
 @app.route('/ui_test_main_menu')
 def ui_test_main_menu():
     """ Эта функция """
-    return render_template('index.html')
+    cmd = ["./scriptsh/ui_test_main_menu.sh"]
+    with subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE,
+                          stdin=subprocess.PIPE,
+                          universal_newlines=True) as result:
+        out = result.communicate()
+    return render_template('index.html', text=out, json=out)
 
 @app.route('/ui_test_search_input')
 def ui_test_search_input():
     """ Эта функция """
-    return render_template('index.html')
+    cmd = ["./scriptsh/ui_test_search_input.sh"]
+    with subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE,
+                          stdin=subprocess.PIPE,
+                          universal_newlines=True) as result:
+        out = result.communicate()
+    return render_template('index.html', text=out, json=out)
 
 @app.route('/ui_test_main_page_info')
 def ui_test_main_page_info():
     """ Эта функция """
-    return render_template('index.html')
+    cmd = ["./scriptsh/ui_test_main_page_info.sh"]
+    with subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE,
+                          stdin=subprocess.PIPE,
+                          universal_newlines=True) as result:
+        out = result.communicate()
+    return render_template('index.html', text=out, json=out)
 
 @app.route('/api_tests')
 def api_tests():
     """ Эта функция """
-    return render_template('index.html')
+    cmd = ["./scriptsh/api_tests.sh"]
+    with subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE,
+                          stdin=subprocess.PIPE,
+                          universal_newlines=True) as result:
+        out = result.communicate()
+    return render_template('index.html', text=out, json=out)
 
 @app.route('/api_test_get_status_code')
 def api_test_get_status_cod():
     """ Эта функция """
-    return render_template('index.html')
+    cmd = ["./scriptsh/api_test_get_status_code.sh"]
+    with subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE,
+                          stdin=subprocess.PIPE,
+                          universal_newlines=True) as result:
+        out = result.communicate()
+    return render_template('index.html', text=out, json=out)
 
 @app.route('/api_test_post_status_code')
 def api_test_post_status_code():
     """ Эта функция """
-    return render_template('index.html')
+    cmd = ["./scriptsh/api_test_post_status_code.sh"]
+    with subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE,
+                          stdin=subprocess.PIPE,
+                          universal_newlines=True) as result:
+        out = result.communicate()
+    return render_template('index.html', text=out, json=out)
 
-@app.route('/ui_allure')
-def ui_allure():
+@app.route('/all_allure')
+def all_allure():
     """ Эта функция """
-    return render_template('index.html')
-
-@app.route('/api_allure')
-def api_allure():
-    """ Эта функция """
-    return render_template('index.html')
+    cmd = ["./scriptsh/all_allure.sh"]
+    with subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE,
+                          stdin=subprocess.PIPE,
+                          universal_newlines=True) as result:
+        out = result.communicate()
+    return render_template('index.html', text=out, json=out)
 
 @app.route('/locus_tests')
 def locus_tests():
     """ Эта функция """
-    return render_template('index.html')
+    cmd = ["./scriptsh/locus_tests.sh"]
+    with subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE,
+                          stdin=subprocess.PIPE,
+                          universal_newlines=True) as result:
+        out = result.communicate()
+    return render_template('index.html', text=out, json=out)
 
 @app.route('/locus_report')
 def locus_report():
     """ Эта функция """
-    return render_template('index.html')
+    cmd = ["./scriptsh/locus_report.sh"]
+    with subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE,
+                          stdin=subprocess.PIPE,
+                          universal_newlines=True) as result:
+        out = result.communicate()
+    return render_template('index.html', text=out, json=out)
 
 
 
