@@ -1,12 +1,3 @@
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,600,600italic,700");
-@import url("font-awesome.min.css");
-
-/*
-	Miniport by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 /* Reset */
 
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -1332,28 +1323,22 @@
 	input[type="reset"],
 	button,
 	.button {
-		background-image: url("images/bg.png"), -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
-		background-image: url("images/bg.png"), -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
-		background-image: url("images/bg.png"), -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
-		background-image: url("images/bg.png"), linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
-		-moz-transition: background-color .2s ease-in-out;
-		-webkit-transition: background-color .2s ease-in-out;
-		-ms-transition: background-color .2s ease-in-out;
-		transition: background-color .2s ease-in-out;
-		-webkit-appearance: none;
 		position: relative;
+
+		top: 10px;
+
 		display: inline-block;
 		color: #fff !important;
 		text-decoration: none;
-		font-weight: 700;
+		font-weight: 600;
 		border: 0;
 		outline: 0;
 		cursor: pointer;
-		border-radius: 8px;
-		text-shadow: -1px -1px 0.5px rgba(0, 0, 0, 0.5);
+		border-radius: 10px;
+		text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
 		overflow: hidden;
-		box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.5), inset 0px 2px 1px 0px rgba(255, 255, 255, 0.75);
-		background-color: #43B3E0;
+		box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0), inset 0px 2px 1px 0px rgba(255, 255, 255, 0.75);
+		background-color: #1E8CB8;
 	}
 
 		input[type="button"]:hover,
@@ -1642,50 +1627,6 @@
 					background: #252525;
 				}
 
-/* Nav */
-
-	#nav {
-		background-color: #282828;
-		text-align: center;
-		position: fixed;
-		left: 0;
-		top: 0;
-		width: 100%;
-		z-index: 10000;
-		cursor: default;
-	}
-
-		#nav ul {
-			margin-bottom: 0;
-		}
-
-		#nav li {
-			display: inline-block;
-		}
-
-		#nav a {
-			position: relative;
-			display: block;
-			color: #fff;
-			text-decoration: none;
-			outline: 0;
-		}
-
-			#nav a:hover {
-				color: #fff !important;
-			}
-
-			#nav a.active:before {
-				content: '';
-				display: block;
-				position: absolute;
-				bottom: -0.6em;
-				left: 50%;
-				margin-left: -0.75em;
-				border-left: solid 0.75em transparent;
-				border-right: solid 0.75em transparent;
-				border-top: solid 0.6em #282828;
-			}
 
 /* Articles */
 
@@ -1782,17 +1723,10 @@
 			input[type="reset"],
 			button,
 			.button {
-				padding: 1em 2.35em 1em 2.35em;
-				font-size: 1.1em;
+				padding: 1em 1em 1em 1em;
+				font-size: 0.65em;
 			}
 
-				input[type="button"].big,
-				input[type="submit"].big,
-				input[type="reset"].big,
-				button.big,
-				.button.big {
-					font-size: 1.5em;
-					letter-spacing: -0.025em;
 				}
 
 		/* Box */
@@ -1832,27 +1766,6 @@
 					padding-top: 12em;
 				}
 
-		/* Nav */
-
-			#nav a {
-				-moz-transition: background-color .2s ease-in-out;
-				-webkit-transition: background-color .2s ease-in-out;
-				-ms-transition: background-color .2s ease-in-out;
-				transition: background-color .2s ease-in-out;
-				padding: 0.2em 1em 0.2em 1em;
-				margin: 0.6em 0.2em 0.6em 0.2em;
-				font-weight: 600;
-				border-radius: 8px;
-				color: #fff;
-			}
-
-				#nav a:hover {
-					background: #383838;
-				}
-
-				#nav a:active {
-					background: #484848;
-				}
 
 		/* Articles */
 
@@ -2004,9 +1917,9 @@
 			button,
 			.button {
 				text-align: center;
-				font-size: 1.2em;
+				font-size: 5em;
 				width: 100%;
-				padding: 1em 0 1em 0;
+				padding: 0em 0em 0em 0em;
 			}
 
 		/* List */
@@ -2074,12 +1987,6 @@
 					padding-top: 5em;
 				}
 
-		/* Nav */
-
-			#nav a {
-				padding: 0.5em;
-			}
-
 		/* Articles */
 
 			#top .image {
@@ -2104,3 +2011,83 @@
 				}
 
 	}
+
+
+
+
+
+
+
+
+
+
+
+body {
+	padding: 0px 0px 0px 0px; 
+	font: 300 16px tahoma;
+}
+
+/* nav */
+.nav {
+	
+	
+	background-color: #282828;
+	text-align: center;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 10000;
+	cursor: default;
+
+
+
+	list-style: none;
+	
+}
+.nav li {
+	float: left;
+	position: relative;
+	background: #303030;
+	margin: 0px 0px 0px 0px;
+}
+
+/* блоки ссылок */
+.nav li a {
+	display: block;
+	text-decoration: none;
+	color: #fff;
+	padding: 12px;
+	border-radius: 0px;
+}
+
+/* выпадающее меню */
+.sub-nav {
+	position: absolute;
+	border-top: 0px solid transparent;
+	left: -9999px;
+	list-style:none;
+	padding: 0px 0px 0px 0px;
+}
+
+/* make submenu reappear */
+.nav li:hover .sub-nav {
+	left: 0;
+}
+
+/* prevent multi line links */
+.sub-nav li {
+	white-space: nowrap;
+}
+
+/* верхний уровень при наведении */
+.nav > li:hover > a {
+	background: #303030;
+	transition: background ease .5s;
+} 
+
+/* ссылки подменю */
+.sub-nav a {
+	margin: 3px;
+	transition: background ease .3s;
+}

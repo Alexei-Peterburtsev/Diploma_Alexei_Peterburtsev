@@ -10,8 +10,7 @@ from locators.locators_main_menu_many import MainPageElements
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-@allure.story("Тест для проверки главной страницы")
-@allure.feature("Проверка количества пунктов в главном меню")
+@allure.story("Проверка количества пунктов в главном меню")
 
 def test_all_menu_header(web_browser):
 

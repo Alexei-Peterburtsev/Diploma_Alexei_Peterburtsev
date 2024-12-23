@@ -11,8 +11,7 @@ from locators.locators_main_page import ManyWebElements
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-@allure.story("Тест для проверки главной страницы")
-@allure.feature("Проверка инпута поиска")
+@allure.story("Проверка инпута поиска")
 
 def test_first_search_input(web_browser):
     '''Этот тест проверяет первую строку поиска'''

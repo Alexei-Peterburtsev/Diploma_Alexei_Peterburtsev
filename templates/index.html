@@ -1,46 +1,92 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 
 <html>
 	<head>
 		<title>Peterburtsev</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-
+		
 		<link rel="stylesheet" href="static/css/main.css" />
-
+		
 		<style>
    			.border {
     		border: 1px solid #959595;
    			}
   		</style>
-
+			
 		<style>
-   			.text-justify {
+   			.text-justify { 
     		text-align: justify; /* Выравнивание по ширине */
    			}
   		</style>
-
-
+		
+		
 	</head>
 	<body>
 
 
-			<nav id="nav">
 
-				 <form action="/ui_test_header_and_footer">
-   					<button>UI TEST HEADER AND FOOTER</button>
-  				</form>
+	<nav>
+		<ul class="nav">
+			<li>
+				<a href="" class="mark">Тестирование UI</a>
+					<ul class="sub-nav">
+						<li><a href="">Все тесты UI</a></li>
 
-				<ul class="container">
-					<li><a href="#top">Наверх</a></li>
-					<li><a href="#work">Работа</a></li>
-					<li><a href="#portfolio">Образование</a></li>
-					<li><a href="#info">Информация</a></li>
-					<li><a href="#contact">Контакты</a></li>
-				</ul>
-			</nav>
+						<li><a href="">Тестирование header и footer</a></li>
+
+						<li><a href="">Тестирование главного меню</a></li>
+
+						<li><a href="">Тестирование строк поиска</a></li>
+
+						<li><a href="">Тестирование данных главной страницы</a></li>
+
+					</ul>
+			</li>
+
+			<li>
+				<a href="" class="mark">Тестирование API</a>
+					<ul class="sub-nav">
+						<li><a href="">Все тесты API</a></li>
+
+						<li><a href="">Тестирование статус кода страниц сайта</a></li>
+
+						<li><a href="">Тестирование статус кода строки поиска</a></li>
+
+					</ul>
+			</li>
+
+			<li>
+				<a href="/run_allure" class="mark">Отчет Allure</a>
+			</li>
+			<li>
+				<a href="" class="mark">Нагрузочное тестирование</a>
+					<ul class="sub-nav">
+						<li><a href="">Нагрузочное тестирование страниц сайта</a></li>
+
+					</ul>
+			</li>
+
+			<li> 	<a href="#top">
+					<img src="static/img/up.png" alt="" style="display: block;">
+				</a>
+			</li>
+
+			<li><a href="#work" class="mark">Работа</a></li>
+
+			<li><a href="#portfolio" class="mark">Образование</a>
 
 
+			</li>
+
+			<li><a href="#info" class="mark">Информация</a></li>
+
+			<li><a href="#contact" class="mark">Контакты</a></li>
+
+
+
+	</nav>
+			
 			<div class="wrapper style1 first">
 				<article class="container" id="top">
 					<div class="row">
@@ -51,22 +97,23 @@
 							<header>
 								<h1><strong>Алексей Петербурцев</strong></h1>
 							</header>
-							<p class="text-justify">Всем привет. Меня зовут Алексей, мне 42 года. Этот сайт расскажет вам краткую информацию обо мне.
-							Он содержит данные о моей учебе, работе, контактных данных. Коммуникабельный, ответственный, пунктуальный.
-							Уверенный пользователь ПК, начальный уровень английского, опыт работы в 1С Предприятие 8, CorelDraw.</p>
-						</div>
+							<p class="text-justify">Всем привет. Меня зовут Алексей, мне 43 года. Этот сайт расскажет вам краткую информацию обо мне.
+							Он содержит данные о моей учебе, работе, контактных данных. В 2025 году я прошел обучение на курсах "Ручное и автоматизированное тестирование ПО"
+							в ООО "АЙТИ ШАГ СФЕРА". В составе курса ручное тестирование ПО, язык программирования Python, автоматизация тестирования ПО. Составление тест-кейсов в Trello,
+							фиксация багов в Jira. Коммуникабельный, ответственный, пунктуальный. Уверенный пользователь ПК, начальный уровень английского, опыт работы в 1С Предприятие 8, CorelDraw.</p>
+						</div>	
 					</div>
 				</article>
 			</div>
 
-
+		
 			<div class="wrapper style2">
 				<article id="work">
-
+					
 					<header>
 						<h2>Работа</h2>
 					</header>
-
+					
 					<div class="container">
 						<div class="row">
 							<div class="4u 12u(mobile)">
@@ -76,7 +123,7 @@
 									<p>Производство зеркал: программирование станков с ЧПУ, дизайн проекты в CorelDRAW, плоттерная резка</p>
 								</article>
 							</div>
-
+						
 							<div class="4u 12u(mobile)">
 								<article class="box style2">
 									<a href="#" class="image featured"><img src="static/img/pic05.jpg" alt="" /></a>
@@ -84,7 +131,7 @@
 									<p>Страховая деятельность: оформление страховых случаев, заключение договоров</p>
 								</article>
 							</div>
-
+						
 							<div class="4u 12u(mobile)">
 								<article class="box style2">
 									<a href="#" class="image featured"><img src="static/img/pic06.jpg" alt="" /></a>
@@ -97,27 +144,27 @@
 				</article>
 			</div>
 
-
+		
 			<div class="wrapper style3">
 				<article id="portfolio">
-
+					
 					<header>
 						<h2>Образование</h2>
 					</header>
-
+					
 					<div class="container">
 						<div class="row">
-
+							
 							<div class="4u 12u(mobile)">
 								<article class="box style2">
 									<a href="#" class="image featured"><img src="static/img/pic01.jpg" alt="" /></a>
 									<h3><a href="#">МГВРК</a></h3>
 									<p>Инженер - программист,<br>педагог</p>
-
+									
 								</article>
 							</div>
-
-
+						
+			
 							<div class="4u 12u(mobile)">
 								<article class="box style2">
 									<a href="#" class="image featured"><img src="static/img/pic03.jpg" alt="" /></a>
@@ -142,24 +189,24 @@
 								</article>
 							</div>
 
-
-
+							
+							
 						</div>
 					</div>
 				</article>
 			</div>
-
-
+		
+		
 			<div class="wrapper style3">
 				<article id="info">
-
+					
 					<header>
 						<h2>Информация</h2>
 					</header>
-
+					
 					<div class="container">
 						<div class="row">
-
+							
 
 							<div class="4u 12u(mobile)">
 								<article class="box style2">
@@ -177,10 +224,10 @@
 								</article>
 							</div>
 
+							
 
-
-
-
+							
+							
 						</div>
 					</div>
 				</article>
@@ -188,24 +235,63 @@
 
 
 
+			<div class="wrapper style3">
+				<article id="info">
+					
+					<header>
+						<h2>Грамоты, благодарности, награждения</h2>
+					</header>
+					
+					<div>
+
+						<marquee>
+
+							<a href="static/img/gr01.jpg">
+							<img src="static/img/gr01.jpg" height="300">
+							</a>
+
+							<a href="static/img/gr02.jpg">
+							<img src="static/img/gr02.jpg" height="200">
+							</a>
+
+							<a href="static/img/gr03.jpg">
+							<img src="static/img/gr03.jpg" height="300">
+							</a>
+
+							<a href="static/img/gr04.jpg">
+							<img src="static/img/gr04.jpg" height="200"">
+							</a>
+
+							<a href="static/img/gr05.jpg">
+							<img src="static/img/gr05.jpg" height="300">
+							</a>
+
+						</marquee>
+
+					</div>
+				</article>
+			</div>
+
+
+
+
+
+
+
+
+		
 			<div class="wrapper style4">
 				<article id="contact" class="container 75%">
 					<header>
 						<h2>Контакты</h2>
 						<p>г.Минск, тел.: +375297536952, email: alexeipeterburtsev@gmail.com</p>
-
-
+						
+						
 					</header>
 				</article>
 			</div>
 
 
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/skel-viewport.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
 
 	</body>
 </html>

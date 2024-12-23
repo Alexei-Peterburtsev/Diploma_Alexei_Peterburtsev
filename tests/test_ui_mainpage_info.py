@@ -11,8 +11,7 @@ from locators.locators_main_page import ManyWebElements
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-@allure.story("Тест для проверки главной страницы")
-@allure.feature("Проверка элементов на главной странице")
+@allure.story("Проверка элементов на главной странице")
 
 def test_menu_info_items(web_browser):
     '''Этот тест проверят блоки информации на главной странице на их наличие'''

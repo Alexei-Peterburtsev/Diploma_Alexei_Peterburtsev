@@ -3,9 +3,7 @@
 import subprocess
 from flask import Flask, render_template
 
-
 app = Flask(__name__)
-
 
 @app.route('/')
 def welcome():
@@ -13,11 +11,16 @@ def welcome():
 
     return render_template('index.html')
 
-@app.route('/ui_tests')
-def ui_tests():
-    """ Эта функция запуска всех UI авто тестов """
+@app.route("/error")
+def error():
+    """ Эта функция запускает и отвечает за процесс возврата результата test_error.html. """
+    return render_template('index.html')
 
-    cmd = ["./scriptsh/ui_tests.sh"]
+@app.route('/run_ui')
+def run_ui():
+    """ Эта функция запуска всех UI тестов """
+
+    cmd = ["./scriptsh/run_ui.sh"]
     with subprocess.Popen(cmd, stdout=subprocess.PIPE,
                           stderr=subprocess.PIPE,
                           stdin=subprocess.PIPE,
@@ -25,11 +28,11 @@ def ui_tests():
         out = result.communicate()
     return render_template('index.html', text=out, json=out)
 
-@app.route('/ui_test_header_and_footer')
-def ui_test_header_and_footer():
-    """ Эта функция запуска UI тестов хедера и футера """
+@app.route('/run_ui_header')
+def run_ui_header():
+    """ Эта функция запуска UI тестов хедера """
 
-    cmd = ["./scriptsh/ui_test_header_and_footer.sh"]
+    cmd = ["./scriptsh/run_ui_header.sh"]
     with subprocess.Popen(cmd, stdout=subprocess.PIPE,
                           stderr=subprocess.PIPE,
                           stdin=subprocess.PIPE,
@@ -37,11 +40,23 @@ def ui_test_header_and_footer():
         out = result.communicate()
     return render_template('index.html', text=out, json=out)
 
-@app.route('/ui_test_main_menu')
-def ui_test_main_menu():
+@app.route('/run_ui_footer')
+def run_ui_footer():
+    """ Эта функция запуска UI тестов футера """
+
+    cmd = ["./scriptsh/run_ui_footer.sh"]
+    with subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE,
+                          stdin=subprocess.PIPE,
+                          universal_newlines=True) as result:
+        out = result.communicate()
+    return render_template('index.html', text=out, json=out)
+
+@app.route('/run_ui_mainmenu')
+def run_ui_mainmenu():
     """ Эта функция запуска UI тестов главного меню сайта """
 
-    cmd = ["./scriptsh/ui_test_main_menu.sh"]
+    cmd = ["./scriptsh/run_ui_mainmenu.sh"]
     with subprocess.Popen(cmd, stdout=subprocess.PIPE,
                           stderr=subprocess.PIPE,
                           stdin=subprocess.PIPE,
@@ -49,11 +64,11 @@ def ui_test_main_menu():
         out = result.communicate()
     return render_template('index.html', text=out, json=out)
 
-@app.route('/ui_test_search_input')
-def ui_test_search_input():
+@app.route('/run_ui_search')
+def run_ui_search():
     """ Эта функция запуска UI тестов инпута поиска """
 
-    cmd = ["./scriptsh/ui_test_search_input.sh"]
+    cmd = ["./scriptsh/run_ui_search.sh"]
     with subprocess.Popen(cmd, stdout=subprocess.PIPE,
                           stderr=subprocess.PIPE,
                           stdin=subprocess.PIPE,
@@ -61,11 +76,11 @@ def ui_test_search_input():
         out = result.communicate()
     return render_template('index.html', text=out, json=out)
 
-@app.route('/ui_test_main_page_info')
-def ui_test_main_page_info():
+@app.route('/run_ui_mainpage_info')
+def run_ui_mainpage_info():
     """ Эта функция запуска UI тестов блоков информации главной страницы """
 
-    cmd = ["./scriptsh/ui_test_main_page_info.sh"]
+    cmd = ["./scriptsh/run_ui_mainpage_info.sh"]
     with subprocess.Popen(cmd, stdout=subprocess.PIPE,
                           stderr=subprocess.PIPE,
                           stdin=subprocess.PIPE,
@@ -73,11 +88,11 @@ def ui_test_main_page_info():
         out = result.communicate()
     return render_template('index.html', text=out, json=out)
 
-@app.route('/api_tests')
-def api_tests():
+@app.route('/run_api')
+def run_api():
     """ Эта функция запуска Api тестов """
 
-    cmd = ["./scriptsh/api_tests.sh"]
+    cmd = ["./scriptsh/run_api.sh"]
     with subprocess.Popen(cmd, stdout=subprocess.PIPE,
                           stderr=subprocess.PIPE,
                           stdin=subprocess.PIPE,
@@ -85,11 +100,11 @@ def api_tests():
         out = result.communicate()
     return render_template('index.html', text=out, json=out)
 
-@app.route('/all_allure')
-def all_allure():
-    """ Эта функция запуска отчетов Allure """
+@app.route('/run_api_page')
+def run_api_page():
+    """ Эта функция запуска Api тестов стауса кода страниц сайта """
 
-    cmd = ["./scriptsh/all_allure.sh"]
+    cmd = ["./scriptsh/run_api_page.sh"]
     with subprocess.Popen(cmd, stdout=subprocess.PIPE,
                           stderr=subprocess.PIPE,
                           stdin=subprocess.PIPE,
@@ -97,11 +112,23 @@ def all_allure():
         out = result.communicate()
     return render_template('index.html', text=out, json=out)
 
-@app.route('/locus_tests')
-def locus_tests():
+@app.route('/run_api_search')
+def run_api_search():
+    """ Эта функция запуска Api тестов статуса кода строки поиска """
+
+    cmd = ["./scriptsh/run_api_search.sh"]
+    with subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE,
+                          stdin=subprocess.PIPE,
+                          universal_newlines=True) as result:
+        out = result.communicate()
+    return render_template('index.html', text=out, json=out)
+
+@app.route('/run_locust')
+def run_locust():
     """ Эта функция запуска нагрузочного тестирования страниц сайта """
 
-    cmd = ["./scriptsh/locus_tests.sh"]
+    cmd = ["./scriptsh/run_locust.sh"]
     with subprocess.Popen(cmd, stdout=subprocess.PIPE,
                           stderr=subprocess.PIPE,
                           stdin=subprocess.PIPE,
@@ -109,47 +136,17 @@ def locus_tests():
         out = result.communicate()
     return render_template('index.html', text=out, json=out)
 
+@app.route('/run_allure')
+def run_allure():
+    """ Эта функция запуска отчета Allure """
 
-
-
-
-
-
-
-
-
-
-# @app.route("/error")
-# def error():
-#     """Эта функция запуская и отвечает за процесс возврата результата test_error.html."""
-#     return render_template('test_error.html')
-#
-#
-# @app.route("/runallure")
-# def run_allure():
-#     """ Эта функция запуская и отвечает за генерацию отчета allure. """
-#
-#     cmd = ["./scriptsh/runallure.sh"]
-#     with subprocess.Popen(cmd, stdout=subprocess.PIPE,
-#                           stderr=subprocess.PIPE,
-#                           stdin=subprocess.PIPE,
-#                           universal_newlines=True) as result:
-#         out = result.communicate()
-#     return render_template('index.html', text=out, json=out)
-#
-#
-# @app.route("/run_ui")
-# def run_ui():
-#     """ Эта функция запуская и отвечает за тесты страницы /example. """
-#
-#     cmd = ["./scriptsh/run_aut_lk.sh"]
-#     with subprocess.Popen(cmd, stdout=subprocess.PIPE,
-#                           stderr=subprocess.PIPE,
-#                           stdin=subprocess.PIPE,
-#                           universal_newlines=True) as result:
-#         out = result.communicate()
-#     return render_template('index.html', text=out, json=out)
-
+    cmd = ["./scriptsh/run_allure.sh"]
+    with subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE,
+                          stdin=subprocess.PIPE,
+                          universal_newlines=True) as result:
+        out = result.communicate()
+    return render_template('index.html', text=out, json=out)
 
 if __name__ == "__main__":
     app.run(debug=True)
