@@ -9,7 +9,7 @@ class User(HttpUser):
 
         urllib3.disable_warnings()
 
-        wait_time = between(1, 3)
+        # wait_time = between(1, 3)
 
         @task
         def mainPage(self):
