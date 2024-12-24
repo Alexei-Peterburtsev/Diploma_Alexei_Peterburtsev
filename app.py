@@ -1,6 +1,7 @@
 """ Импортирование библиотеки для работы с Flask и запусков субпроцессов. """
 
 import subprocess
+import webbrowser
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -149,4 +150,5 @@ def run_allure():
     return render_template('index.html', text=out, json=out)
 
 if __name__ == "__main__":
+    webbrowser.open('http://127.0.0.1:5000')
     app.run(debug=True)
