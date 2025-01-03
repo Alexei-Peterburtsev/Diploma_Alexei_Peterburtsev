@@ -1,15 +1,9 @@
 '''Тестирование сайта КТУП Минский Комаровский рынок'''
 
-import time
-
 import allure
 import pytest_check as check
 from locators.locators_main_page import MainPage
 from conftest import web_browser
-from locators.locators_main_page import ManyWebElements
-
-from selenium import webdriver
-from selenium.webdriver.common.by import By
 
 @allure.story("Проверка футера")
 

@@ -1,15 +1,10 @@
 '''Тестирование сайта КТУП Минский Комаровский рынок'''
 
-import time
-
 import allure
 import pytest_check as check
 from locators.locators_main_page import MainPage
 from conftest import web_browser
-from locators.locators_main_page import ManyWebElements
-
-from selenium import webdriver
-from selenium.webdriver.common.by import By
+from locators.locators_main_menu_many import MainPageElements
 
 @allure.story("Проверка элементов на главной странице")
 
@@ -28,3 +23,11 @@ def test_menu_info_items(web_browser):
     for elements, elements_text in main_page_all_info_items:
         with allure.step("Тест проверки отображения на экране"):
             check.is_true(elements.is_visible(), f"Элемент '{elements_text}' отсутствует на экране")
+
+def test_all_menu_header(web_browser):
+    '''Этот тест проверят количество пунктов в главном меню'''
+
+    page = MainPageElements(web_browser)
+
+    with allure.step("Тест количества пунктов в главном меню"):
+        check.equal(page.main_page_all_menu_header.count(), 5, "Количество пунктов в главном меню не 5")

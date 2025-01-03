@@ -5,7 +5,7 @@ import allure
 import pytest
 import pytest_check as check
 
-@allure.feature("Апи тесты страниц сайта")
+@allure.story("Апи тесты страниц сайта")
 @pytest.mark.parametrize("url", ["/about/",
                                  "/pokupatelyu/",
                                  "/arendatoru/",

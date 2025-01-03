@@ -5,7 +5,7 @@ import allure
 import pytest
 import pytest_check as check
 
-@allure.feature("Апи тесты строки поиска")
+@allure.story("Апи тесты строки поиска")
 
 def test_url_search():
   '''Этот тест проверяет статус код страниц поиска по сайту'''
