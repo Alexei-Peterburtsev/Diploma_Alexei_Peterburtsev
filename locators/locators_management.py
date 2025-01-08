@@ -18,11 +18,11 @@ class MainPage(WebPage):
     management_foto_zam_razvitie = WebElement(xpath="//img[@title='Ткачук Иван Алексеевич.jpg']")
     management_foto_zam_glingener = WebElement(xpath="//img[@title='IMG08322 копия.jpg']")
 
-    management_fio_director = WebElement(xpath="//main[@class='other-page']//div[@class='row']//div[1]//p[1]")
-    management_fio_frst_zam = WebElement(xpath="//main[@class='other-page']//div[@class='row']//div[2]//p[1]")
-    management_fio_zam_ideologia= WebElement(xpath="//main[@class='other-page']//div[@class='row']//div[3]//p[1]")
-    management_fio_zam_bezopasnost = WebElement(xpath="//main[@class='other-page']//div[@class='row']//div[4]//p[1]")
-    management_fio_zam_razvitie = WebElement(xpath="//main[@class='other-page']//div[@class='row']//div[5]//p[1]")
+    management_fio_director = WebElement(xpath="//div[@class='col-md-9']//div[1]//p[1]")
+    management_fio_frst_zam = WebElement(xpath="//div[@class='col-md-9']//div[2]//p[1]")
+    management_fio_zam_ideologia= WebElement(xpath="//div[@class='col-md-9']//div[3]//p[1]")
+    management_fio_zam_bezopasnost = WebElement(xpath="//div[@class='col-md-9']//div[4]//p[1]")
+    management_fio_zam_razvitie = WebElement(xpath="//div[@class='col-md-9']//div[5]//p[1]")
     management_fio_zam_glingener = WebElement(xpath="")
 
 

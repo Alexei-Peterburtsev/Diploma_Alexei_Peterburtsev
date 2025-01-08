@@ -25,19 +25,19 @@ def test_management_foto(web_browser):
             check.is_true(foto_elements.is_visible(), f"Элемент '{text_foto_elements}' отсутствует на экране")
 
 def test_management_fio(web_browser):
-    """Этот тест проверят фамилии руководителей"""
+    """Этот тест проверят фамилии и должности руководителей"""
 
     page = MainPage(web_browser)
 
-    management_fio = [(page.management_fio_director, "Хмельницкий Николай Михайлович"),
-                      (page.management_fio_frst_zam, "Бусло Николай Кириллович"),
-                      (page.management_fio_zam_ideologia, "Томашевич Людмила Михайловна"),
-                      (page.management_fio_zam_razvitie, "Ткачук Иван Алексеевич"),
-                      (page.management_fio_zam_bezopasnost, "Будько Александр Васильевич")
+    management_fio = [(page.management_fio_director, "Генеральный директор: Хмельницкий Николай Михайлович"),
+                      (page.management_fio_frst_zam, "Первый заместитель генерального директора: Бусло Николай Кириллович"),
+                      (page.management_fio_zam_ideologia, "Заместитель генерального директора по идеологической работе и социальным вопросам: Томашевич Людмила Михайловна"),
+                      (page.management_fio_zam_razvitie, "Заместитель генерального директора по развитию: Ткачук Иван Алексеевич"),
+                      (page.management_fio_zam_bezopasnost, "Заместитель генерального директора по безопасности: Будько Александр Васильевич")
                       ]
 
     for elements_fio, elements_text in management_fio:
         with allure.step("Тест проверки отображения на экране"):
             check.is_true(elements_fio.is_visible(), f"Элемент '{elements_text}' отсутствует на экране")
-        # with allure.step("Тест проверки орфографии"):
-        #     check.equal(elements_fio.get_text(), elements_text, f"Текст элемента '{elements_text}' содержит ошибку")
+        with allure.step("Тест проверки орфографии"):
+            check.equal(elements_fio.get_text(), elements_text, f"Текст элемента '{elements_text}' содержит ошибку")
