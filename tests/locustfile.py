@@ -1,4 +1,4 @@
-'''Тестирование сайта КТУП Минский Комаровский рынок'''
+"""Тестирование сайта КТУП Минский Комаровский рынок"""
 
 from locust import HttpUser, SequentialTaskSet, task, between
 import urllib3

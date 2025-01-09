@@ -1,4 +1,4 @@
-'''Тестирование сайта КТУП Минский Комаровский рынок'''
+"""Тестирование сайта КТУП Минский Комаровский рынок"""
 
 import allure
 import pytest_check as check
@@ -9,7 +9,7 @@ from locators.locators_main_menu_many import MainPageElements
 @allure.story("Проверка элементов на главной странице")
 
 def test_menu_info_items(web_browser):
-    '''Этот тест проверят блоки информации на главной странице на их наличие'''
+    """Этот тест проверят блоки информации на главной странице на их наличие"""
 
     page = MainPage(web_browser)
 
@@ -25,7 +25,7 @@ def test_menu_info_items(web_browser):
             check.is_true(elements.is_visible(), f"Элемент '{elements_text}' отсутствует на экране")
 
 def test_all_menu_header(web_browser):
-    '''Этот тест проверят количество пунктов в главном меню'''
+    """Этот тест проверят количество пунктов в главном меню"""
 
     page = MainPageElements(web_browser)
 

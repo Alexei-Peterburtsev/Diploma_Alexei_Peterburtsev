@@ -1,4 +1,4 @@
-'''Тестирование сайта КТУП Минский Комаровский рынок'''
+"""Тестирование сайта КТУП Минский Комаровский рынок"""
 
 import time
 
@@ -10,7 +10,7 @@ from conftest import web_browser
 @allure.story("Проверка инпута поиска")
 
 def test_first_search_input(web_browser):
-    '''Этот тест проверяет первую строку поиска'''
+    """Этот тест проверяет первую строку поиска"""
 
     page = MainPage(web_browser)
 
@@ -24,7 +24,7 @@ def test_first_search_input(web_browser):
 
 
 def test_second_search_input(web_browser):
-    '''Этот тест проверяет вторую строку поиска'''
+    """Этот тест проверяет вторую строку поиска"""
 
     page = MainPage(web_browser)
 

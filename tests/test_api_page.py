@@ -1,4 +1,4 @@
-'''Тестирование сайта КТУП Минский Комаровский рынок'''
+"""Тестирование сайта КТУП Минский Комаровский рынок"""
 
 import requests
 import allure
@@ -15,7 +15,7 @@ import pytest_check as check
                          )
 
 def test_url(url):
-    '''Этот тест проверяет статус код страниц главного меню'''
+    """Этот тест проверяет статус код страниц главного меню"""
 
     site_response = requests.get(f"https://komarovka.by{url}", verify=False)
 
