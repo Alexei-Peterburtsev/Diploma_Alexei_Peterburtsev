@@ -89,6 +89,18 @@ def run_ui_mainpage_info():
         out = result.communicate()
     return render_template('index.html', text=out, json=out)
 
+@app.route('/run_ui_management')
+def run_ui_management():
+    """ Эта функция запуска UI тестов блоков информации главной страницы """
+
+    cmd = ["C:/Program Files/Git/bin/bash.exe", "./scriptsh/run_ui_management.sh"]
+    with subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE,
+                          stdin=subprocess.PIPE,
+                          universal_newlines=True) as result:
+        out = result.communicate()
+    return render_template('index.html', text=out, json=out)
+
 @app.route('/run_api')
 def run_api():
     """ Эта функция запуска Api тестов """
@@ -118,6 +130,18 @@ def run_api_search():
     """ Эта функция запуска Api тестов статуса кода строки поиска """
 
     cmd = ["C:/Program Files/Git/bin/bash.exe", "./scriptsh/run_api_search.sh"]
+    with subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE,
+                          stdin=subprocess.PIPE,
+                          universal_newlines=True) as result:
+        out = result.communicate()
+    return render_template('index.html', text=out, json=out)
+
+@app.route('/run_api_page_404')
+def run_api_page_404():
+    """ Эта функция запуска Api тестов статуса кода строки поиска """
+
+    cmd = ["C:/Program Files/Git/bin/bash.exe", "./scriptsh/run_api_page_404.sh"]
     with subprocess.Popen(cmd, stdout=subprocess.PIPE,
                           stderr=subprocess.PIPE,
                           stdin=subprocess.PIPE,
