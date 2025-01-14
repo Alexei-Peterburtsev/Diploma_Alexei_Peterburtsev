@@ -1,8 +1,9 @@
 #!/bin/bash
 
-cd ..
-cd tests
+DIR=$(dirname "$0")
+
+FILE="$DIR/../tests/locustfile.py"
 
 start http://localhost:8089
 
-locust -f locustfile.py --host https://komarovka.by --run-time 10 --autostart --autoquit 10
+locust -f "$FILE" --host https://komarovka.by --run-time 10 --autostart --autoquit 10

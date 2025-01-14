@@ -1,6 +1,7 @@
 #!/bin/bash
 
-cd ..
-cd tests
+DIR=$(dirname "$0")
 
-allure serve results
+RESULTS="$DIR/../tests/results"
+
+allure serve "$RESULTS"
