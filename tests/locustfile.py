@@ -1,6 +1,6 @@
 """Тестирование сайта КТУП Минский Комаровский рынок"""
 
-from locust import HttpUser, SequentialTaskSet, task, between
+from locust import HttpUser, SequentialTaskSet, task
 import urllib3
 
 class User(HttpUser):
@@ -8,8 +8,6 @@ class User(HttpUser):
     class SequenceOfTasks(SequentialTaskSet):
 
         urllib3.disable_warnings()
-
-        # wait_time = between(1, 3)
 
         @task
         def mainPage(self):
