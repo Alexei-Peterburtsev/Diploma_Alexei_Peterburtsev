@@ -1,5 +1,4 @@
 import os
-
 from page.base_page import WebPage
 from page.elements import WebElement
 
@@ -23,9 +22,3 @@ class MainPage(WebPage):
     management_fio_zam_ideologia= WebElement(xpath="//div[@class='col-md-9']//div[3]//p[1]")
     management_fio_zam_bezopasnost = WebElement(xpath="//div[@class='col-md-9']//div[4]//p[1]")
     management_fio_zam_razvitie = WebElement(xpath="//div[@class='col-md-9']//div[5]//p[1]")
-    management_fio_zam_glingener = WebElement(xpath="")
-
-
-
-
-

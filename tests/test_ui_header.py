@@ -5,7 +5,10 @@ import pytest_check as check
 from locators.locators_main_page import MainPage
 from conftest import web_browser
 
+@allure.epic("Тестирование сайта https://komarovka.by")
+@allure.feature("UI тесты")
 @allure.story("Проверка хедера")
+@allure.label("owner", "Алексей Петербурцев")
 
 def test_header_btn(web_browser):
     """Этот тест проверяет хедер на наличие логотипа, кнопки на кликабельность, отображение, орфографию, ссылку url, переход по url"""

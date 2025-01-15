@@ -6,7 +6,10 @@ from locators.locators_main_page import MainPage
 from conftest import web_browser
 from locators.locators_main_menu_many import MainPageElements
 
+@allure.epic("Тестирование сайта https://komarovka.by")
+@allure.feature("UI тесты")
 @allure.story("Проверка элементов на главной странице")
+@allure.label("owner", "Алексей Петербурцев")
 
 def test_menu_info_items(web_browser):
     """Этот тест проверят блоки информации на главной странице на их наличие"""

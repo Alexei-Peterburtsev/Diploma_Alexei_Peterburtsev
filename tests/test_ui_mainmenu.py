@@ -5,7 +5,10 @@ import pytest_check as check
 from locators.locators_main_page import MainPage
 from conftest import web_browser
 
+@allure.epic("Тестирование сайта https://komarovka.by")
+@allure.feature("UI тесты")
 @allure.story("Проверка главного меню")
+@allure.label("owner", "Алексей Петербурцев")
 
 def test_all_main_menu(web_browser):
     """Этот тест проверят главное меню на открытие пунктов, их наличие, кликабельность, орфографию, ссылки, переходы по ссылкам"""

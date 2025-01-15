@@ -2,10 +2,12 @@
 
 import requests
 import allure
-import pytest
 import pytest_check as check
 
-@allure.story("Апи тесты строки поиска")
+@allure.epic("Тестирование сайта https://komarovka.by")
+@allure.feature("API тесты")
+@allure.story("Проверка строки поиска")
+@allure.label("owner", "Алексей Петербурцев")
 
 def test_url_search():
   """Этот тест проверяет статус код страниц поиска по сайту"""
@@ -32,5 +34,5 @@ def test_url_search():
 
   site_response = requests.request("GET", url, headers=headers, data=payload)
 
-  with allure.step("Тест статус кода"):
+  with allure.step("Тест статус кода строки поиска"):
     check.equal(site_response.status_code, 200, "Статус код не равен 200")

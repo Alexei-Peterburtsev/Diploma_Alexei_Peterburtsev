@@ -5,10 +5,14 @@ import pytest_check as check
 from locators.locators_management import MainPage
 from conftest import web_browser
 
+@allure.epic("Тестирование сайта https://komarovka.by")
+@allure.feature("UI тесты")
 @allure.story("Проверка страницы руководства")
+@allure.label("owner", "Алексей Петербурцев")
 
-def test_management_foto(web_browser):
-    """Этот тест проверят наличие фотографий руководителей"""
+def test_management(web_browser):
+
+    """Этот тест проверят наличие фотографий руководителей, должности, фамилии"""
 
     page = MainPage(web_browser)
 
@@ -23,9 +27,6 @@ def test_management_foto(web_browser):
     for foto_elements, text_foto_elements in management_foto:
         with allure.step("Тест проверки отображения на экране"):
             check.is_true(foto_elements.is_visible(), f"Элемент '{text_foto_elements}' отсутствует на экране")
-
-def test_management_fio(web_browser):
-    """Этот тест проверят фамилии и должности руководителей"""
 
     page = MainPage(web_browser)
 

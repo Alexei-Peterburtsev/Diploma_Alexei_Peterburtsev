@@ -1,11 +1,9 @@
 import time
 import requests
-
 from termcolor import colored
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
 
 class WebPage(object):
     _web_driver = None

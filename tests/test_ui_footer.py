@@ -5,7 +5,10 @@ import pytest_check as check
 from locators.locators_main_page import MainPage
 from conftest import web_browser
 
+@allure.epic("Тестирование сайта https://komarovka.by")
+@allure.feature("UI тесты")
 @allure.story("Проверка футера")
+@allure.label("owner", "Алексей Петербурцев")
 
 def test_futer_btn(web_browser):
     """Этот тест проверяет футер на наличие логотипа, кнопки на кликабельность, отображение, орфографию, ссылку url, переход по url"""
@@ -29,7 +32,6 @@ def test_futer_btn(web_browser):
                           ]
 
     # Элементы футера с переходом на другой сайт:
-
 
     futer_btn_elements_new_site = [(page.futer_btn_artis, "ArtisMedia", "http://www.artismedia.by/"),                   # в дереве http без 's'
                                    (page.futer_btn_facebook, "facebook", "https://www.facebook.com/komarovka.by/"),
