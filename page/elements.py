@@ -1,3 +1,5 @@
+""" Фреймворк для вебэлементов """
+
 import time
 from termcolor import colored
 from selenium.webdriver import ActionChains
@@ -35,7 +37,7 @@ class WebElement(object):
         return element
 
     def wait_to_be_clickable(self, timeout=10, check_visibility=True):
-        """ Подождfть пока элемент будет готов к клику. """
+        """ Подождать пока элемент будет готов к клику. """
 
         element = None
 

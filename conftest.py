@@ -1,10 +1,10 @@
+""" Фреймворк для веббраузера """
+
 import uuid
 import allure
 import pytest
-
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-
 
 @pytest.fixture
 def web_browser(request):

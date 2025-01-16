@@ -1,3 +1,5 @@
+""" Фреймворк для вебстраницы """
+
 import time
 import requests
 from termcolor import colored

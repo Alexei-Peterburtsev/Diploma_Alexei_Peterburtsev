@@ -1,4 +1,4 @@
-""" Импортирование библиотеки для работы с Flask и запусков субпроцессов. """
+""" Импортирование библиотеки для работы с Flask и запусков субпроцессов """
 
 import subprocess
 import webbrowser
@@ -139,7 +139,7 @@ def run_api_search():
 
 @app.route('/run_api_page_404')
 def run_api_page_404():
-    """ Эта функция запуска Api тестов статуса кода строки поиска """
+    """ Эта функция запуска Api тестов статуса кода строк 404 """
 
     cmd = ["C:/Program Files/Git/bin/bash.exe", "./scriptsh/run_api_page_404.sh"]
     with subprocess.Popen(cmd, stdout=subprocess.PIPE,
